@@ -44,6 +44,7 @@
             this.button_2Joueurs.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button_2Joueurs.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.button_2Joueurs, "button_2Joueurs");
+            this.button_2Joueurs.ForeColor = System.Drawing.Color.Gold;
             this.button_2Joueurs.Name = "button_2Joueurs";
             this.button_2Joueurs.UseVisualStyleBackColor = true;
             this.button_2Joueurs.Click += new System.EventHandler(this.button_2Joueurs_Click);
@@ -55,6 +56,7 @@
             this.button_3Joueurs.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button_3Joueurs.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.button_3Joueurs, "button_3Joueurs");
+            this.button_3Joueurs.ForeColor = System.Drawing.Color.Gold;
             this.button_3Joueurs.Name = "button_3Joueurs";
             this.button_3Joueurs.UseVisualStyleBackColor = true;
             this.button_3Joueurs.Click += new System.EventHandler(this.button_3Joueurs_Click);
@@ -66,6 +68,7 @@
             this.button_4Joueurs.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button_4Joueurs.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.button_4Joueurs, "button_4Joueurs");
+            this.button_4Joueurs.ForeColor = System.Drawing.Color.Gold;
             this.button_4Joueurs.Name = "button_4Joueurs";
             this.button_4Joueurs.UseVisualStyleBackColor = true;
             this.button_4Joueurs.Click += new System.EventHandler(this.button_4Joueurs_Click);
@@ -77,6 +80,7 @@
             this.button_5Joueurs.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button_5Joueurs.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.button_5Joueurs, "button_5Joueurs");
+            this.button_5Joueurs.ForeColor = System.Drawing.Color.Gold;
             this.button_5Joueurs.Name = "button_5Joueurs";
             this.button_5Joueurs.UseVisualStyleBackColor = true;
             this.button_5Joueurs.Click += new System.EventHandler(this.button_5Joueurs_Click);
@@ -88,6 +92,7 @@
             this.button_Quitter.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button_Quitter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.button_Quitter, "button_Quitter");
+            this.button_Quitter.ForeColor = System.Drawing.Color.Gold;
             this.button_Quitter.Name = "button_Quitter";
             this.button_Quitter.UseVisualStyleBackColor = true;
             this.button_Quitter.Click += new System.EventHandler(this.quitter);
@@ -99,6 +104,7 @@
             this.button_Options.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button_Options.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.button_Options, "button_Options");
+            this.button_Options.ForeColor = System.Drawing.Color.Gold;
             this.button_Options.Name = "button_Options";
             this.button_Options.UseVisualStyleBackColor = true;
             // 
