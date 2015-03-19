@@ -1,1 +1,11 @@
 C:\Users\SuRvYv0r\Documents\Visual Studio 2013\Projects\StupideVautour\StupideVautour\bin\Debug\StupideVautour.exe.config
+C:\Users\Gaëtan\Documents\GitHub\Stupide-Vautour\StupideVautour\bin\Debug\StupideVautour.exe.config
+C:\Users\Gaëtan\Documents\GitHub\Stupide-Vautour\StupideVautour\bin\Debug\StupideVautour.exe
+C:\Users\Gaëtan\Documents\GitHub\Stupide-Vautour\StupideVautour\bin\Debug\StupideVautour.pdb
+C:\Users\Gaëtan\Documents\GitHub\Stupide-Vautour\StupideVautour\obj\Debug\StupideVautour.csprojResolveAssemblyReference.cache
+C:\Users\Gaëtan\Documents\GitHub\Stupide-Vautour\StupideVautour\obj\Debug\StupideVautour.Menu.resources
+C:\Users\Gaëtan\Documents\GitHub\Stupide-Vautour\StupideVautour\obj\Debug\StupideVautour.Table_jeu.resources
+C:\Users\Gaëtan\Documents\GitHub\Stupide-Vautour\StupideVautour\obj\Debug\StupideVautour.Properties.Resources.resources
+C:\Users\Gaëtan\Documents\GitHub\Stupide-Vautour\StupideVautour\obj\Debug\StupideVautour.csproj.GenerateResource.Cache
+C:\Users\Gaëtan\Documents\GitHub\Stupide-Vautour\StupideVautour\obj\Debug\StupideVautour.exe
+C:\Users\Gaëtan\Documents\GitHub\Stupide-Vautour\StupideVautour\obj\Debug\StupideVautour.pdb
