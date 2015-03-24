@@ -34,6 +34,7 @@ namespace StupideVautour
             pioche_point = new int[15];
             melangedeck(pioche_point, 15);
             Jeu_etat = 0;
+            Main_joueur.
         }
 
         private void pictureBox19_Click(object sender, EventArgs e)
