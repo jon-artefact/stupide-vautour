@@ -40,5 +40,10 @@ namespace StupideVautour
             Table_jeu Jeu = new Table_jeu(5);
             Jeu.Show();
         }
+
+        private void quitter(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

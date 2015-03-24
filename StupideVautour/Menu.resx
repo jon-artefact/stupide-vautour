@@ -117,4 +117,205 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="button_2Joueurs.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="button_2Joueurs.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Pericles, 15.75pt</value>
+  </data>
+  <data name="button_2Joueurs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 148</value>
+  </data>
+  <data name="button_2Joueurs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>275, 38</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="button_2Joueurs.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="button_2Joueurs.Text" xml:space="preserve">
+    <value>2 Joueurs</value>
+  </data>
+  <data name="&gt;&gt;button_2Joueurs.Name" xml:space="preserve">
+    <value>button_2Joueurs</value>
+  </data>
+  <data name="&gt;&gt;button_2Joueurs.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_2Joueurs.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button_2Joueurs.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="button_3Joueurs.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="button_3Joueurs.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Pericles, 15.75pt</value>
+  </data>
+  <data name="button_3Joueurs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 192</value>
+  </data>
+  <data name="button_3Joueurs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>275, 38</value>
+  </data>
+  <data name="button_3Joueurs.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="button_3Joueurs.Text" xml:space="preserve">
+    <value>3 Joueurs</value>
+  </data>
+  <data name="&gt;&gt;button_3Joueurs.Name" xml:space="preserve">
+    <value>button_3Joueurs</value>
+  </data>
+  <data name="&gt;&gt;button_3Joueurs.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_3Joueurs.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button_3Joueurs.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="button_4Joueurs.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="button_4Joueurs.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Pericles, 15.75pt</value>
+  </data>
+  <data name="button_4Joueurs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 236</value>
+  </data>
+  <data name="button_4Joueurs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>275, 38</value>
+  </data>
+  <data name="button_4Joueurs.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="button_4Joueurs.Text" xml:space="preserve">
+    <value>4 Joueurs</value>
+  </data>
+  <data name="&gt;&gt;button_4Joueurs.Name" xml:space="preserve">
+    <value>button_4Joueurs</value>
+  </data>
+  <data name="&gt;&gt;button_4Joueurs.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_4Joueurs.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button_4Joueurs.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="button_5Joueurs.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="button_5Joueurs.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Pericles, 15.75pt</value>
+  </data>
+  <data name="button_5Joueurs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 280</value>
+  </data>
+  <data name="button_5Joueurs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>275, 38</value>
+  </data>
+  <data name="button_5Joueurs.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="button_5Joueurs.Text" xml:space="preserve">
+    <value>5 Joueurs</value>
+  </data>
+  <data name="&gt;&gt;button_5Joueurs.Name" xml:space="preserve">
+    <value>button_5Joueurs</value>
+  </data>
+  <data name="&gt;&gt;button_5Joueurs.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_5Joueurs.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button_5Joueurs.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="button_Quitter.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="button_Quitter.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Pericles, 15.75pt</value>
+  </data>
+  <data name="button_Quitter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 368</value>
+  </data>
+  <data name="button_Quitter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>275, 38</value>
+  </data>
+  <data name="button_Quitter.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="button_Quitter.Text" xml:space="preserve">
+    <value>Quitter</value>
+  </data>
+  <data name="&gt;&gt;button_Quitter.Name" xml:space="preserve">
+    <value>button_Quitter</value>
+  </data>
+  <data name="&gt;&gt;button_Quitter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_Quitter.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button_Quitter.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="button_Options.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
+  <data name="button_Options.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Pericles, 15.75pt</value>
+  </data>
+  <data name="button_Options.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 324</value>
+  </data>
+  <data name="button_Options.Size" type="System.Drawing.Size, System.Drawing">
+    <value>275, 38</value>
+  </data>
+  <data name="button_Options.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="button_Options.Text" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="&gt;&gt;button_Options.Name" xml:space="preserve">
+    <value>button_Options</value>
+  </data>
+  <data name="&gt;&gt;button_Options.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_Options.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button_Options.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>308, 460</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Stupide Vautour</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Menu</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>
