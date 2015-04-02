@@ -20,26 +20,38 @@ namespace StupideVautour
 
         public Table_jeu(int nbJoueurs)
         {
-            int i;
-            int j;
             InitializeComponent();
             mains_joueurs = new int[nbJoueurs,15];
-            for(i = 0; i < nbJoueurs-1; i++)
-            {
-                for(j=0;j<15;j++)
-                {
-                    mains_joueurs[i,j] = 1;
-                }
-            }
             pioche_point = new int[15];
+
+            initialiseMainsJoueurs(nbJoueurs);
             melangedeck(pioche_point, 15);
             Jeu_etat = 0;
-            Main_joueur.
+            afficherMainJoueur();
         }
 
-        private void pictureBox19_Click(object sender, EventArgs e)
+        void initialiseMainsJoueurs(int nbJoueurs)
         {
+            int i;
+            int j;
+            for (i = 0; i < nbJoueurs - 1; i++)
+            {
+                for (j = 0; j < 15; j++)
+                {
+                    mains_joueurs[i, j] = 1;
+                }
+            }
+        }
 
+        void afficherMainJoueur()
+        {
+            PictureBox carte;
+            int k;
+            for (k = 0; k < Affiche_Main_joueur.ColumnCount; k++)
+            {
+                carte = (PictureBox)Affiche_Main_joueur.GetControlFromPosition(k, 0);
+                carte.Image = Liste_cartes_jouer.Images[k];
+            }
         }
 
         void melangedeck(int[] tabl, int taille)
@@ -59,6 +71,10 @@ namespace StupideVautour
                 tabl[i] = trie[j];
                 trie[j] = 0;
             }
+        }
+
+        private void Affiche_Main_joueur_Click(object sender, EventArgs e)
+        {
         }
 
 
