@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IA.cs" />
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
