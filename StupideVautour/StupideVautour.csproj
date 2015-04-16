@@ -45,6 +45,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IA.cs" />
+    <Compile Include="IAdifficile.cs" />
+    <Compile Include="IAJohn.cs" />
+    <Compile Include="IAnormal.cs" />
+    <Compile Include="IAnovice.cs" />
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
