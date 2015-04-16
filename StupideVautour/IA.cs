@@ -9,7 +9,7 @@ public class IA
         this.num = num;
 	}
 
-    public int Joue(int[,] mains_joueurs, int[] cartesTombee)
+    public int Joue(int[,] mains_joueurs, int point)
     {
         return 1;
     }

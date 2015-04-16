@@ -14,9 +14,8 @@ namespace StupideVautour
     {
         int[,] mains_joueurs;
         int[] pioche_point;
-        int[] cartes_tombee;
         int Jeu_tour;
-        int Score;
+        int[] scores;
         int nbJoueurs;
         IA[] adversaires;
 
@@ -27,6 +26,7 @@ namespace StupideVautour
             this.nbJoueurs = nbJoueurs;
             mains_joueurs = new int[nbJoueurs,15];
             pioche_point = new int[15];
+            scores = new int[nbJoueurs];
 
             initialiseAdversaires(nbJoueurs);
             initialiseMainsJoueurs(nbJoueurs);
@@ -36,8 +36,14 @@ namespace StupideVautour
 
             PictureBox cartePoint;
             cartePoint = (PictureBox)affiche_carte_point;
-            cartePoint.Image = Liste_cartes_points.Images[Jeu_tour];
-
+            if (pioche_point[Jeu_tour] < 0)
+            {
+                cartePoint.Image = Liste_cartes_points.Images[pioche_point[Jeu_tour]+5];
+            }
+            else
+            {
+                cartePoint.Image = Liste_cartes_points.Images[pioche_point[Jeu_tour]+4];
+            }
         }
 
         void initialiseAdversaires(int nb)
@@ -117,6 +123,55 @@ namespace StupideVautour
             return true;
         }
 
+        /**
+         * @c'est ici qu'on compte les points
+         */
+        private void compte(int carteJoueur, int[] carteIA, int point)
+        {
+            int i;
+            int[] cartesJouees = new int[15]; //0 : personnes ne l'a jouée // 1 à 5 : 1joueurs l'a jouée // 6 : plusieurs personnes l'on jouée
+            for (i = 0; i < 15; i++)
+            {
+                cartesJouees[i] = 0;
+            }
+            cartesJouees[carteJoueur-1] = 1;
+            for (i = 0; i < nbJoueurs-1; i++)
+            {
+                if (cartesJouees[carteIA[i]] != 0)
+                {
+                    cartesJouees[carteIA[i]-1] = 6;
+                }
+                else
+                {
+                    cartesJouees[carteIA[i]-1] = i + 1;
+                }
+            }
+            if (point > 0)
+            {
+                int j = 14;
+                while (j != 0 && (cartesJouees[j] == 0 || cartesJouees[j] == 6))
+                {
+                    j--;
+                }
+                if (j != 0)
+                {
+                    scores[cartesJouees[j] - 1] = +point;
+                }
+            }
+            else
+            {
+                int j = 0;
+                while (j != 15 && (cartesJouees[j] == 0 || cartesJouees[j] == 6))
+                {
+                    j++;
+                }
+                if (j != 15)
+                {
+                    scores[cartesJouees[j] - 1] = +point;
+                }
+            }
+        }
+
         private void ramasse()
         {
             PictureBox carteJouee0;
@@ -138,13 +193,15 @@ namespace StupideVautour
             PictureBox carteJouee4;
             carteJouee4 = (PictureBox)carte_jouer_IA4;
             carteJouee4.Image = null;
+
+            Console.WriteLine("score = {0}", scores[0]);
         }
 
 
         private void joueurJoue(int carte)
         {
             int i;
-            int[] IAjoue = new int[nbJoueurs];
+            int[] IAjoue = new int[nbJoueurs-1];
             if (mains_joueurs[0, carte - 1] == 1)
             {
                 // Tout le monde joue :
@@ -152,7 +209,7 @@ namespace StupideVautour
 
                 for (i = 1; i < nbJoueurs; i++)
                 {
-                    IAjoue[i] = adversaires[i].Joue(mains_joueurs, cartes_tombee);
+                    IAjoue[i-1] = adversaires[i].Joue(mains_joueurs, pioche_point[Jeu_tour]);
                 }
 
                 // On affiche Le tout un petit moment :
@@ -164,23 +221,23 @@ namespace StupideVautour
 
                 PictureBox carteJouee1;
                 carteJouee1 = (PictureBox)carte_jouer_IA1;
-                carteJouee1.Image = Liste_cartes_jouer.Images[IAjoue[1]];
+                carteJouee1.Image = Liste_cartes_jouer.Images[IAjoue[0]];
 
                 if (nbJoueurs > 2)
                 {
                     PictureBox carteJouee2;
                     carteJouee2 = (PictureBox)carte_jouer_IA2;
-                    carteJouee2.Image = Liste_cartes_jouer.Images[IAjoue[2]];
+                    carteJouee2.Image = Liste_cartes_jouer.Images[IAjoue[1]];
                     if (nbJoueurs > 3)
                     {
                         PictureBox carteJouee3;
                         carteJouee3 = (PictureBox)carte_jouer_IA3;
-                        carteJouee3.Image = Liste_cartes_jouer.Images[IAjoue[3]];
+                        carteJouee3.Image = Liste_cartes_jouer.Images[IAjoue[2]];
                         if (nbJoueurs > 4)
                         {
                             PictureBox carteJouee4;
                             carteJouee4 = (PictureBox)carte_jouer_IA4;
-                            carteJouee4.Image = Liste_cartes_jouer.Images[IAjoue[4]];
+                            carteJouee4.Image = Liste_cartes_jouer.Images[IAjoue[3]];
                         }
                     }
                 }
@@ -210,13 +267,21 @@ namespace StupideVautour
 
                 this.Refresh();
                 System.Threading.Thread.Sleep(3000);
+                compte(carte, IAjoue, pioche_point[Jeu_tour]);
                 ramasse();
                 Jeu_tour++;
-                if (Jeu_tour > 14)
+                if (Jeu_tour < 14)
                 {
                     PictureBox cartePoint;
                     cartePoint = (PictureBox)affiche_carte_point;
-                    cartePoint.Image = Liste_cartes_points.Images[Jeu_tour];
+                    if (pioche_point[Jeu_tour] < 0)
+                    {
+                        cartePoint.Image = Liste_cartes_points.Images[pioche_point[Jeu_tour] + 5];
+                    }
+                    else
+                    {
+                        cartePoint.Image = Liste_cartes_points.Images[pioche_point[Jeu_tour] + 4];
+                    }
                 }
 
             }
