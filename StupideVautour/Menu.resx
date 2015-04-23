@@ -270,34 +270,52 @@
   <data name="&gt;&gt;button_Quitter.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="button_Options.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Popup</value>
-  </data>
-  <data name="button_Options.Font" type="System.Drawing.Font, System.Drawing">
+  <metadata name="difficulty.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="difficulty.Font" type="System.Drawing.Font, System.Drawing">
     <value>Pericles, 15.75pt</value>
   </data>
-  <data name="button_Options.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 324</value>
+  <data name="difficulty.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>On</value>
   </data>
-  <data name="button_Options.Size" type="System.Drawing.Size, System.Drawing">
-    <value>275, 38</value>
+  <data name="difficulty.Items" xml:space="preserve">
+    <value>Facile</value>
   </data>
-  <data name="button_Options.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+  <data name="difficulty.Items1" xml:space="preserve">
+    <value>Normal</value>
   </data>
-  <data name="button_Options.Text" xml:space="preserve">
-    <value>Options</value>
+  <data name="difficulty.Items2" xml:space="preserve">
+    <value>Difficile</value>
   </data>
-  <data name="&gt;&gt;button_Options.Name" xml:space="preserve">
-    <value>button_Options</value>
+  <data name="difficulty.Items3" xml:space="preserve">
+    <value>John</value>
   </data>
-  <data name="&gt;&gt;button_Options.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="difficulty.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 328</value>
   </data>
-  <data name="&gt;&gt;button_Options.Parent" xml:space="preserve">
+  <data name="difficulty.Size" type="System.Drawing.Size, System.Drawing">
+    <value>275, 34</value>
+  </data>
+  <data name="difficulty.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="difficulty.Text" xml:space="preserve">
+    <value>Difficulté</value>
+  </data>
+  <data name="difficulty.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;difficulty.Name" xml:space="preserve">
+    <value>difficulty</value>
+  </data>
+  <data name="&gt;&gt;difficulty.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DomainUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;difficulty.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;button_Options.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;difficulty.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

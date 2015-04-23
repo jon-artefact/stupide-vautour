@@ -34,7 +34,7 @@
             this.button_4Joueurs = new System.Windows.Forms.Button();
             this.button_5Joueurs = new System.Windows.Forms.Button();
             this.button_Quitter = new System.Windows.Forms.Button();
-            this.button_Options = new System.Windows.Forms.Button();
+            this.difficulty = new System.Windows.Forms.DomainUpDown();
             this.SuspendLayout();
             // 
             // button_2Joueurs
@@ -97,23 +97,25 @@
             this.button_Quitter.UseVisualStyleBackColor = true;
             this.button_Quitter.Click += new System.EventHandler(this.quitter);
             // 
-            // button_Options
+            // difficulty
             // 
-            this.button_Options.BackColor = System.Drawing.Color.Transparent;
-            this.button_Options.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button_Options.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button_Options.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.button_Options, "button_Options");
-            this.button_Options.ForeColor = System.Drawing.Color.Gold;
-            this.button_Options.Name = "button_Options";
-            this.button_Options.UseVisualStyleBackColor = true;
+            this.difficulty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(89)))), ((int)(((byte)(170)))), ((int)(((byte)(211)))));
+            resources.ApplyResources(this.difficulty, "difficulty");
+            this.difficulty.ForeColor = System.Drawing.Color.Gold;
+            this.difficulty.Items.Add(resources.GetString("difficulty.Items"));
+            this.difficulty.Items.Add(resources.GetString("difficulty.Items1"));
+            this.difficulty.Items.Add(resources.GetString("difficulty.Items2"));
+            this.difficulty.Items.Add(resources.GetString("difficulty.Items3"));
+            this.difficulty.Name = "difficulty";
+            this.difficulty.ReadOnly = true;
+            this.difficulty.SelectedItemChanged += new System.EventHandler(this.difficulty_SelectedItemChanged);
             // 
             // Menu
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::StupideVautour.Properties.Resources.Verso;
-            this.Controls.Add(this.button_Options);
+            this.Controls.Add(this.difficulty);
             this.Controls.Add(this.button_Quitter);
             this.Controls.Add(this.button_5Joueurs);
             this.Controls.Add(this.button_4Joueurs);
@@ -132,6 +134,6 @@
         private System.Windows.Forms.Button button_4Joueurs;
         private System.Windows.Forms.Button button_5Joueurs;
         private System.Windows.Forms.Button button_Quitter;
-        private System.Windows.Forms.Button button_Options;
+        private System.Windows.Forms.DomainUpDown difficulty;
     }
 }
