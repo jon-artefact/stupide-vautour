@@ -49,6 +49,8 @@
     <Compile Include="IAJohn.cs" />
     <Compile Include="IAnormal.cs" />
     <Compile Include="IAnovice.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="Mains.cs" />
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>

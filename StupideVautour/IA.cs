@@ -1,35 +1,42 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-public abstract class IA
+namespace StupideVautour
 {
-    protected int num;
-    protected int nbJoueur;
-    protected int mode;
-
-    public IA()
+    public abstract class IA
     {
-        //yolo;
-    }
+        protected int num;
+        protected int nbJoueur;
+        protected int mode;
 
-    public IA(int num, int nbJoueur)
-	{
-        this.num = num;
-        this.nbJoueur = nbJoueur;
-        this.mode = setMode();
-	}
-
-    protected int setMode()
-    {
-        switch (nbJoueur)
+        public IA()
         {
-            case 2:
-                return 1;
-            case 4:
-                return 3;
-            default:
-                return 2;
+            //yolo;
         }
-    }
 
-    public abstract int Joue(int[,] mains_joueurs, int point, int[] scores);
+        public IA(int num, int nbJoueur)
+        {
+            this.num = num;
+            this.nbJoueur = nbJoueur;
+            this.mode = setMode();
+        }
+
+        protected int setMode()
+        {
+            switch (nbJoueur)
+            {
+                case 2:
+                    return 1;
+                case 4:
+                    return 3;
+                default:
+                    return 2;
+            }
+        }
+
+        public abstract int Joue(Mains Mains, int point, int[] scores);
+    }
 }

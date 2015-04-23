@@ -10,11 +10,10 @@ namespace StupideVautour
     {
          public IAnormal(int num, int nbJoueur)
             : base(num, nbJoueur)
-        {
+	{
+	}
 
-        }
-
-        public override int Joue(int[,] mains_joueurs, int point, int[] scores)
+        public override int Joue(Mains mains_joueurs, int point, int[] scores)
         {
             switch(mode)
             {
