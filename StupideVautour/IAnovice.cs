@@ -8,6 +8,9 @@ namespace StupideVautour
 {
     class IAnovice : IA
     {
-
+        public override int Joue(int[,] mains_joueurs, int point, int[] scores)
+        {
+            return 1;
+        }
     }
 }

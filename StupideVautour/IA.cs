@@ -1,17 +1,24 @@
 ﻿using System;
 
-public class IA
+public abstract class IA
 {
     protected int num;
     protected int nbJoueur;
-	
+    protected int mode;
+
+    public IA()
+    {
+        //yolo;
+    }
+
     public IA(int num, int nbJoueur)
 	{
         this.num = num;
         this.nbJoueur = nbJoueur;
+        this.mode = setMode();
 	}
 
-    protected int mode()
+    protected int setMode()
     {
         switch (nbJoueur)
         {
@@ -24,5 +31,5 @@ public class IA
         }
     }
 
-    public int Joue(int[,] mains_joueurs, int point);
+    public abstract int Joue(int[,] mains_joueurs, int point, int[] scores);
 }

@@ -8,6 +8,14 @@ namespace StupideVautour
 {
     class IAJohn : IA
     {
+        public override int Joue(int[,] mains_joueurs, int point, int[] scores)
+        {
+            return 1;
+        }
 
+        public IAJohn(int point, int nbJoueurs)
+        {
+            //to do
+        }
     }
 }

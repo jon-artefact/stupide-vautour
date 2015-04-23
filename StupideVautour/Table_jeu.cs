@@ -18,6 +18,7 @@ namespace StupideVautour
         int[] scores;
         int nbJoueurs;
         IA[] adversaires;
+        int pointEnJeu;
 
 
         public Table_jeu(int nbJoueurs)
@@ -52,7 +53,7 @@ namespace StupideVautour
             int i;
             for (i = 1; i < nb; i++)
             {
-                adversaires[i] = new IA(i);
+                adversaires[i] = new IAdifficile(i, nbJoueurs);
             }
         }
 
@@ -207,9 +208,10 @@ namespace StupideVautour
                 // Tout le monde joue :
                 mains_joueurs[0, carte - 1] = 0;
 
+                //int PointEnJeu;
                 for (i = 1; i < nbJoueurs; i++)
                 {
-                    IAjoue[i-1] = adversaires[i].Joue(mains_joueurs, pioche_point[Jeu_tour]);
+                    IAjoue[i-1] = adversaires[i].Joue(mains_joueurs, pioche_point[Jeu_tour], scores);
                 }
 
                 // On affiche Le tout un petit moment :
