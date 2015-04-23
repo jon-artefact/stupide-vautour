@@ -9,6 +9,13 @@ namespace StupideVautour
     class IAdifficile : IA
     {
 
+        public IAdifficile(int num, int nbJoueur)
+            : base(num, nbJoueur)
+        {
+
+        }
+
+
         public int IA1v1(int[,] mains_joueurs, int point){
             int pointEnJeu = Math.Abs(point);
             if (pointEnJeu > 5)
@@ -33,7 +40,7 @@ namespace StupideVautour
         }
 
 
-        public int Joue(int[,] mains_joueurs, int point)
+        public override int Joue(int[,] mains_joueurs, int point, int[] scores)
         {
             switch (nbJoueur)
             {
