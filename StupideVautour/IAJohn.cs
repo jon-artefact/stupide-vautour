@@ -9,5 +9,9 @@ namespace StupideVautour
     class IAJohn : IA
     {
 
+        public IAJohn(int point, int nbJoueurs)
+        {
+            //to do
+        }
     }
 }

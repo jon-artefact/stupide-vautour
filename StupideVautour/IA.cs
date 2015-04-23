@@ -2,9 +2,14 @@
 
 public class IA
 {
-    int num;
-    int nbJoueur;
-	
+    protected int num;
+    protected int nbJoueur;
+
+    public IA()
+    {
+        //yolo;
+    }
+
     public IA(int num, int nbJoueur)
 	{
         this.num = num;
