@@ -8,7 +8,7 @@ namespace StupideVautour
 {
     class IAnormal : IA
     {
-        public override int Joue(int[,] mains_joueurs, int point, int[] scores)
+        public override int Joue(Mains mains_joueurs, int point, int[] scores)
         {
 
             return 0;

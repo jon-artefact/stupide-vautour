@@ -16,7 +16,7 @@ namespace StupideVautour
         }
 
 
-        public int IA1v1(int[,] mains_joueurs, int point){
+        public int IA1v1(Mains mains_joueurs, int point){
             int pointEnJeu = Math.Abs(point);
             if (pointEnJeu > 5)
             {
@@ -29,32 +29,37 @@ namespace StupideVautour
             return 2;
         }
 
-        public int IA1vpair(int[,] mains_joueurs, int point)
+        public int IA1vpair(Mains mains_joueurs, int point)
         {
             return 3;
         }
 
-        public int IA1vimpair(int[,] mains_joueurs, int point)
+        public int IA1vimpair(Mains mains_joueurs, int point)
         {
             return 4;
         }
 
 
-        public override int Joue(int[,] mains_joueurs, int point, int[] scores)
+        public override int Joue(Mains mains_joueurs, int point, int[] scores)
         {
-            switch (nbJoueur)
+            int cartePosee;
+            switch (mode)
             {
+                case 1 :
+                    cartePosee = IA1v1(mains_joueurs, point);
+                    break;
                 case 2 :
-                    return IA1v1(mains_joueurs, point);
+                    cartePosee = IA1vpair(mains_joueurs, point);
+                    break;
                 case 3 :
-                    return IA1vpair(mains_joueurs, point);
-                case 4 :
-                    return IA1vimpair(mains_joueurs, point);
-                case 5 :
-                    return IA1vpair(mains_joueurs, point);
+                    cartePosee = IA1vimpair(mains_joueurs, point);
+                    break;
                 default :
-                    return 1;
+                    cartePosee = 1;
+                    break;
             }
+            mains_joueurs.joue(num, cartePosee);
+            return cartePosee;
         }
     }
 }

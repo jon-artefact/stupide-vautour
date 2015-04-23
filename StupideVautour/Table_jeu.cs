@@ -12,7 +12,7 @@ namespace StupideVautour
 {
     public partial class Table_jeu : Form
     {
-        int[,] mains_joueurs;
+        Mains Mains;
         int[] pioche_point;
         int Jeu_tour;
         int[] scores;
@@ -25,12 +25,11 @@ namespace StupideVautour
         {
             InitializeComponent();
             this.nbJoueurs = nbJoueurs;
-            mains_joueurs = new int[nbJoueurs,15];
+            Mains = new Mains(nbJoueurs);
             pioche_point = new int[15];
             scores = new int[nbJoueurs];
 
             initialiseAdversaires(nbJoueurs);
-            initialiseMainsJoueurs(nbJoueurs);
             melangedeck(pioche_point, 15);
             Jeu_tour = 0;
             afficherMainJoueur();
@@ -57,19 +56,6 @@ namespace StupideVautour
             }
         }
 
-        void initialiseMainsJoueurs(int nbJoueurs)
-        {
-            int i;
-            int j;
-            for (i = 0; i < nbJoueurs; i++)
-            {
-                for (j = 0; j < 15; j++)
-                {
-                    mains_joueurs[i, j] = 1;
-                }
-            }
-        }
-
         void afficherMainJoueur()
         {
             PictureBox carte;
@@ -77,7 +63,7 @@ namespace StupideVautour
             for (k = 0; k < Affiche_Main_joueur.ColumnCount; k++)
             {
                 carte = (PictureBox)Affiche_Main_joueur.GetControlFromPosition(k, 0);
-                if (mains_joueurs[0, k] == 1)
+                if (Mains.existe(0,k))
                 {
                     carte.Image = Liste_cartes_jouer.Images[k];
                 }
@@ -116,7 +102,7 @@ namespace StupideVautour
             int i;
             for(i=0;i<15;i++)
             {
-                if (mains_joueurs[0, i] == 1)
+                if(Mains.existe(0,i))
                 {
                     return false;
                 }
@@ -203,15 +189,13 @@ namespace StupideVautour
         {
             int i;
             int[] IAjoue = new int[nbJoueurs-1];
-            if (mains_joueurs[0, carte - 1] == 1)
+            if(Mains.existe(0,carte-1))
             {
                 // Tout le monde joue :
-                mains_joueurs[0, carte - 1] = 0;
-
-                //int PointEnJeu;
+                Mains.joue(0, carte - 1);
                 for (i = 1; i < nbJoueurs; i++)
                 {
-                    IAjoue[i-1] = adversaires[i].Joue(mains_joueurs, pioche_point[Jeu_tour], scores);
+                    IAjoue[i-1] = adversaires[i].Joue(Mains, pioche_point[Jeu_tour], scores);
                 }
 
                 // On affiche Le tout un petit moment :
