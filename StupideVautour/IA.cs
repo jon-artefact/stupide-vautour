@@ -1,6 +1,6 @@
 ﻿using System;
 
-public class IA
+public abstract class IA
 {
     protected int num;
     protected int nbJoueur;
@@ -29,5 +29,5 @@ public class IA
         }
     }
 
-    public int Joue(int[,] mains_joueurs, int point);
+    public abstract int Joue(int[,] mains_joueurs, int point, int[] scores);
 }
