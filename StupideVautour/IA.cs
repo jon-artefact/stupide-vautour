@@ -4,6 +4,7 @@ public abstract class IA
 {
     protected int num;
     protected int nbJoueur;
+    protected int mode;
 
     public IA()
     {
@@ -14,9 +15,10 @@ public abstract class IA
 	{
         this.num = num;
         this.nbJoueur = nbJoueur;
+        this.mode = setMode();
 	}
 
-    protected int mode()
+    protected int setMode()
     {
         switch (nbJoueur)
         {
