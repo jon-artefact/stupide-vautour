@@ -20,8 +20,17 @@ namespace StupideVautour
         IA[] adversaires;
         int pointEnJeu;
 
-
-        public Table_jeu(int nbJoueurs)
+        /*
+         * Ce constructeur prend en paramètres :
+         * le nombre de Joueurs entre 1 et 5
+         * la difficulté des IA affrontés qui peut valoir :
+         * 1 : Facile
+         * 2 : Normal
+         * 3 : Difficile
+         * 42 : Impossible ^_-
+         * 
+         */
+        public Table_jeu(int nbJoueurs, int difficulte)
         {
             InitializeComponent();
             this.nbJoueurs = nbJoueurs;
