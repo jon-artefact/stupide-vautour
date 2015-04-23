@@ -16,9 +16,18 @@ public class IA
         this.nbJoueur = nbJoueur;
 	}
 
-    public int Joue(int[,] mains_joueurs, int point)
+    protected int mode()
     {
-        
-        return 1;
+        switch (nbJoueur)
+        {
+            case 2:
+                return 1;
+            case 4:
+                return 3;
+            default:
+                return 2;
+        }
     }
+
+    public int Joue(int[,] mains_joueurs, int point);
 }
