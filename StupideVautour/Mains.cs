@@ -39,6 +39,21 @@ namespace StupideVautour
             return max;
         }
 
+        public int maxJoueur(int joueur)
+        {
+            return Jeux[joueur].max();
+        }
+
+        public int minJoueur(int joueur)
+        {
+            return Jeux[joueur].min();
+        }
+
+        public bool existeEntreJoueur(int joueur, int min, int max)
+        {
+            return Jeux[joueur].existeEntre(min, max);
+        }
+
         public bool existe(int joueur, int carte)
         {
             return Jeux[joueur].existe(carte);

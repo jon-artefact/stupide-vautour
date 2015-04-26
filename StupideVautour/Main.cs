@@ -23,6 +23,22 @@ namespace StupideVautour
             }
         }
 
+        /**
+         * Regarde s'il existe une carte dans l'intervalle de valeur donné
+         */
+        public bool existeEntre(int min, int max)
+        {
+            int i;
+            for (i = min-1; i < max-1; i++)
+            {
+                if (cartes[i])
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         public int max()
         {
             int i=14;
@@ -30,22 +46,27 @@ namespace StupideVautour
             {
                 i--;
             }
-            return i;
+            return i++;
         }
 
         public int min()
         {
-            return 1;
+            int i = 0;
+            while (!cartes[i])
+            {
+                i++;
+            }
+            return i++;
         }
 
         public bool existe(int carte)
         {
-            return cartes[carte];
+            return cartes[carte-1];
         }
 
         public void joue(int carte)
         {
-            cartes[carte] = false;
+            cartes[carte-1] = false;
         }
     }
 }

@@ -37,6 +37,13 @@ namespace StupideVautour
             }
         }
 
+        protected int jouePetiteCarte(Mains mains_joueurs)
+        {
+            Random rand;
+            rand = new Random();
+            return rand.Next(8)+1;
+        }
+
         public abstract int Joue(Mains Mains, int point, int[] scores);
     }
 }

@@ -16,11 +16,54 @@ namespace StupideVautour
         }
 
 
-        public int IA1v1(Mains mains_joueurs, int point){
+        public int IA1v1(Mains mains_joueurs, int point)
+        {
             int pointEnJeu = Math.Abs(point);
             if (pointEnJeu > 5)
             {
-                
+                if (mains_joueurs.maxAll(1) == 15)
+                {
+                    if (mains_joueurs.existeEntreJoueur(1, 10, 14))
+                    {
+                        int carteAjoue;
+                        do
+                        {
+                            Random rand;
+                            rand = new Random();
+                            carteAjoue = rand.Next(5) + 10;
+                        } while (mains_joueurs.existe(1, carteAjoue));
+                        return carteAjoue;
+                    }
+                }
+                else
+                {
+                    if (mains_joueurs.maxJoueur(0) < mains_joueurs.maxJoueur(1))
+                    {
+                        int i = mains_joueurs.maxJoueur(0) + 1;
+                        while(!mains_joueurs.existe(1, i))
+                        {
+                            i++;
+                        }
+                        return i;
+                    }
+                    else
+                    {
+                        if (mains_joueurs.existeEntreJoueur(1, 1, 8))
+                        {
+                            int carteAjoue;
+                            do
+                            {
+                                carteAjoue = this.jouePetiteCarte(mains_joueurs);
+                            } while (!mains_joueurs.existe(1, carteAjoue));
+                            return carteAjoue;
+                        }
+                        else
+                        {
+                            return mains_joueurs.minJoueur(1);
+                        }
+                    }
+
+                }
             }
             
             

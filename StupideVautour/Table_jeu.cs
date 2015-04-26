@@ -72,7 +72,7 @@ namespace StupideVautour
             for (k = 0; k < Affiche_Main_joueur.ColumnCount; k++)
             {
                 carte = (PictureBox)Affiche_Main_joueur.GetControlFromPosition(k, 0);
-                if (Mains.existe(0,k))
+                if (Mains.existe(0,k+1))
                 {
                     carte.Image = Liste_cartes_jouer.Images[k];
                 }
@@ -109,7 +109,7 @@ namespace StupideVautour
         private bool testFin()
         {
             int i;
-            for(i=0;i<15;i++)
+            for(i=1;i<=15;i++)
             {
                 if(Mains.existe(0,i))
                 {
@@ -198,10 +198,10 @@ namespace StupideVautour
         {
             int i;
             int[] IAjoue = new int[nbJoueurs-1];
-            if(Mains.existe(0,carte-1))
+            if(Mains.existe(0,carte))
             {
                 // Tout le monde joue :
-                Mains.joue(0, carte - 1);
+                Mains.joue(0, carte);
                 for (i = 1; i < nbJoueurs; i++)
                 {
                     IAjoue[i-1] = adversaires[i].Joue(Mains, pioche_point[Jeu_tour], scores);
