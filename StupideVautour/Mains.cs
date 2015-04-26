@@ -8,6 +8,7 @@ namespace StupideVautour
 {
     public class Mains
     {
+        int nbMains;
         Main[] Jeux;
 
         public Mains(int n)
@@ -18,6 +19,24 @@ namespace StupideVautour
             {
                 Jeux[i] = new Main();
             }
+            this.nbMains = n;
+        }
+
+        /**
+         * Renvoi la carte la plus forte, tout adversaires confondu;
+         */
+        public int maxAll(int joueur)
+        {
+            int i;
+            int max = 0;
+            for (i = 0; i < nbMains; i++)
+            {
+                if (i!=joueur && Jeux[i].max() > max)
+                {
+                    max = Jeux[i].max();
+                }
+            }
+            return max;
         }
 
         public bool existe(int joueur, int carte)

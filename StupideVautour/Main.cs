@@ -8,6 +8,9 @@ namespace StupideVautour
 {
     class Main
     {
+        /**
+         * tableau de 15 cartes; 0-14
+         */
         bool[] cartes;
 
         public Main()
@@ -22,7 +25,12 @@ namespace StupideVautour
 
         public int max()
         {
-            return 1;
+            int i=14;
+            while (!cartes[i])
+            {
+                i--;
+            }
+            return i;
         }
 
         public int min()
