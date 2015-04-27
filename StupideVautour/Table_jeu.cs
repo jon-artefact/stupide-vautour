@@ -38,7 +38,7 @@ namespace StupideVautour
             pioche_point = new int[15];
             scores = new int[nbJoueurs];
 
-            initialiseAdversaires(nbJoueurs);
+            initialiseAdversaires(nbJoueurs, difficulte);
             melangedeck(pioche_point, 15);
             Jeu_tour = 0;
             afficherMainJoueur();
@@ -55,13 +55,28 @@ namespace StupideVautour
             }
         }
 
-        void initialiseAdversaires(int nb)
+        void initialiseAdversaires(int nb, int difficulte)
         {
             adversaires = new IA[5];
             int i;
             for (i = 1; i < nb; i++)
             {
-                adversaires[i] = new IAdifficile(i, nbJoueurs);
+                switch(difficulte)
+                {
+                    case 42:
+                        adversaires[i] = new IAJohn(i, nbJoueurs);
+                        break;
+                    case 2:
+                        adversaires[i] = new IAnormal(i, nbJoueurs);
+                        break;
+                    case 3:
+                        adversaires[i] = new IAdifficile(i, nbJoueurs);
+                        break;
+                    default:
+                        adversaires[i] = new IAnovice(i, nbJoueurs);
+                        break;
+                }
+                
             }
         }
 
@@ -216,23 +231,23 @@ namespace StupideVautour
 
                 PictureBox carteJouee1;
                 carteJouee1 = (PictureBox)carte_jouer_IA1;
-                carteJouee1.Image = Liste_cartes_jouer.Images[IAjoue[0]];
+                carteJouee1.Image = Liste_cartes_jouer.Images[IAjoue[0] - 1];
 
                 if (nbJoueurs > 2)
                 {
                     PictureBox carteJouee2;
                     carteJouee2 = (PictureBox)carte_jouer_IA2;
-                    carteJouee2.Image = Liste_cartes_jouer.Images[IAjoue[1]];
+                    carteJouee2.Image = Liste_cartes_jouer.Images[IAjoue[1] - 1];
                     if (nbJoueurs > 3)
                     {
                         PictureBox carteJouee3;
                         carteJouee3 = (PictureBox)carte_jouer_IA3;
-                        carteJouee3.Image = Liste_cartes_jouer.Images[IAjoue[2]];
+                        carteJouee3.Image = Liste_cartes_jouer.Images[IAjoue[2] - 1];
                         if (nbJoueurs > 4)
                         {
                             PictureBox carteJouee4;
                             carteJouee4 = (PictureBox)carte_jouer_IA4;
-                            carteJouee4.Image = Liste_cartes_jouer.Images[IAjoue[3]];
+                            carteJouee4.Image = Liste_cartes_jouer.Images[IAjoue[3] - 1];
                         }
                     }
                 }
