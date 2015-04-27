@@ -8,6 +8,8 @@ namespace StupideVautour
 {
     class IAnormal : IA
     {
+        public int MAX = 10;
+
          public IAnormal(int num, int nbJoueur)
             : base(num, nbJoueur)   { }
 
@@ -30,15 +32,17 @@ namespace StupideVautour
                 Console.WriteLine(point);
             }
                 
-            int pivot;
-            
+            int min = (point < 0)? point * (-1) : point;
+            int max = min + 5;
+            int i = min;
+            int last = 0;
+            /*
             // On va commencer par regarder le mode de jeu actuel
             switch(mode)
             {
                     // Dans le cas d'un 1 vs 1
                 case 1:
-                    if (point < 0)
-                        pivot = point * (-1);
+                    
                     break;
 
                     // Dans le cas d'un 1 vs 2 ou 1 vs 4
@@ -50,8 +54,24 @@ namespace StupideVautour
                 default :
 
                     break;
+            }*/
+            Random rand = new Random();
+            
+            for(i = min; i <= max; ++i)
+            {
+                if (mains_joueurs.existe(num, i))
+                {
+                    if (!mains_joueurs.existe(0, i))
+                        return i;
+                    else
+                        last = i;
+                }
             }
-            return 0;
+            if (last != i)
+                return last;
+            else
+                return mains_joueurs.minJoueur(num);
+                
         }
     }
 }
