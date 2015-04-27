@@ -216,23 +216,23 @@ namespace StupideVautour
 
                 PictureBox carteJouee1;
                 carteJouee1 = (PictureBox)carte_jouer_IA1;
-                carteJouee1.Image = Liste_cartes_jouer.Images[IAjoue[0]];
+                carteJouee1.Image = Liste_cartes_jouer.Images[IAjoue[0]-1];
 
                 if (nbJoueurs > 2)
                 {
                     PictureBox carteJouee2;
                     carteJouee2 = (PictureBox)carte_jouer_IA2;
-                    carteJouee2.Image = Liste_cartes_jouer.Images[IAjoue[1]];
+                    carteJouee2.Image = Liste_cartes_jouer.Images[IAjoue[1]-1];
                     if (nbJoueurs > 3)
                     {
                         PictureBox carteJouee3;
                         carteJouee3 = (PictureBox)carte_jouer_IA3;
-                        carteJouee3.Image = Liste_cartes_jouer.Images[IAjoue[2]];
+                        carteJouee3.Image = Liste_cartes_jouer.Images[IAjoue[2]-1];
                         if (nbJoueurs > 4)
                         {
                             PictureBox carteJouee4;
                             carteJouee4 = (PictureBox)carte_jouer_IA4;
-                            carteJouee4.Image = Liste_cartes_jouer.Images[IAjoue[3]];
+                            carteJouee4.Image = Liste_cartes_jouer.Images[IAjoue[3]-1];
                         }
                     }
                 }
