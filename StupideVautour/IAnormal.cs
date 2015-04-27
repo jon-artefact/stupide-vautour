@@ -32,46 +32,42 @@ namespace StupideVautour
                 Console.WriteLine(point);
             }
                 
-            int min = (point < 0)? point * (-1) : point;
-            int max = min + 5;
-            int i = min;
-            int last = 0;
-            /*
             // On va commencer par regarder le mode de jeu actuel
             switch(mode)
             {
                     // Dans le cas d'un 1 vs 1
                 case 1:
-                    
+                    int min = (point < 0)? point * (-1) : point;
+                    int max = min + 5;
+                    int i = min;
+                    int last = 0;
+                    for (i = min; i <= max; ++i)
+                    {
+                        if (mains_joueurs.existe(num, i))
+                        {
+                            if (!mains_joueurs.existe(0, i))
+                                return i;
+                            else
+                                last = i;
+                        }
+                    }
+                    if (last != 0)
+                        return last;
+                    else
+                        return mains_joueurs.maxJoueur(num);
                     break;
 
                     // Dans le cas d'un 1 vs 2 ou 1 vs 4
                 case 2:
-
+                    Random rand = new Random();
                     break;
 
                     // Dans le cas d'un 1 vs 3
                 default :
 
                     break;
-            }*/
-            Random rand = new Random();
-            
-            for(i = min; i <= max; ++i)
-            {
-                if (mains_joueurs.existe(num, i))
-                {
-                    if (!mains_joueurs.existe(0, i))
-                        return i;
-                    else
-                        last = i;
-                }
             }
-            if (last != i)
-                return last;
-            else
-                return mains_joueurs.minJoueur(num);
-                
+            return 0;
         }
     }
 }

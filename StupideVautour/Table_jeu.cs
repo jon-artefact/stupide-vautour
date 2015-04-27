@@ -219,7 +219,7 @@ namespace StupideVautour
                 Mains.joue(0, carte);
                 for (i = 1; i < nbJoueurs; i++)
                 {
-                    IAjoue[i-1] = adversaires[i].Joue(Mains, pioche_point[Jeu_tour], scores);
+                    Mains.joue(i, IAjoue[i - 1] = adversaires[i].Joue(Mains, pioche_point[Jeu_tour], scores));
                 }
 
                 // On affiche Le tout un petit moment :
