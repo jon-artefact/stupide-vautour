@@ -68,5 +68,16 @@ namespace StupideVautour
         {
             cartes[carte-1] = false;
         }
+
+        public int nbCartesRestantes()
+        {
+            int i, j = 0;
+            for (i = 0; i < 15; ++i)
+            {
+                if (cartes[i])
+                    j++;
+            }
+            return j;
+        }
     }
 }

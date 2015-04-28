@@ -4,7 +4,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.IO;
 using System.Text;
+using System.Media;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -19,6 +21,7 @@ namespace StupideVautour
         int nbJoueurs;
         IA[] adversaires;
         int pointEnJeu;
+        SoundPlayer snd = null;
 
         /*
          * Ce constructeur prend en paramètres :
@@ -53,6 +56,12 @@ namespace StupideVautour
             {
                 cartePoint.Image = Liste_cartes_points.Images[pioche_point[Jeu_tour]+4];
             }
+
+            affichageScore();
+
+            Stream str = Properties.Resources.InGameSound;
+            snd = new SoundPlayer(str);
+            snd.PlayLooping();
         }
 
         void initialiseAdversaires(int nb, int difficulte)
@@ -77,6 +86,21 @@ namespace StupideVautour
                         break;
                 }
                 
+            }
+        }
+        public void affichageScore()
+        {
+            label0.Text = "Score : " + scores[0];
+            label1.Text = "Score : " + scores[1];
+            if (nbJoueurs > 2)
+            {
+                label2.Text = "Score : " + scores[2];
+                if (nbJoueurs > 3)
+                {
+                    label3.Text = "Score : " + scores[3];
+                    if(nbJoueurs > 4)
+                        label4.Text = "Score : " + scores[4];
+                }
             }
         }
 
@@ -206,6 +230,7 @@ namespace StupideVautour
             carteJouee4.Image = null;
 
             Console.WriteLine("score = {0}", scores[0]);
+            affichageScore();
         }
 
 
@@ -259,26 +284,28 @@ namespace StupideVautour
                     }
                 }
 
-                
-
                 if (Jeu_tour == 14)
                 {
-                    string caption = "Partie finie";
+                    // On regarde le gagnant !
+                    int max = scores[0];
+                    for(i = 1; i < nbJoueurs; ++i)
+                    {
+                        if (scores[i] > max)
+                            max = scores[i];
+                    }
+
+                    string caption = (scores[0] >= max) ? "Vous avez gagner ! :D" : "Vous avez perdu :(";
                     string message = "Votre partie est finie, voulez-vous recommencer?";
                     MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                     DialogResult result;
 
                     // Displays the MessageBox.
-
                     result = MessageBox.Show(message, caption, buttons);
 
                     if (result == System.Windows.Forms.DialogResult.No)
                     {
-
                         // Closes the parent form.
-
                         this.Close();
-
                     }
                 }
 

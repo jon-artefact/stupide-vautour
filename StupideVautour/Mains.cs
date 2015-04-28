@@ -63,5 +63,10 @@ namespace StupideVautour
         {
             Jeux[joueur].joue(carte);
         }
+
+        public int nbCartesRestantes(int joueur)
+        {
+            return Jeux[joueur].nbCartesRestantes();
+        }
     }
 }

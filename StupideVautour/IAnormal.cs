@@ -32,42 +32,50 @@ namespace StupideVautour
                 Console.WriteLine(point);
             }
                 
-            // On va commencer par regarder le mode de jeu actuel
-            switch(mode)
+            // On va commencer par regarder le mode de jeu actuel                    
+            if(mode == 1) // Dans le cas d'un 1 vs 1
             {
-                    // Dans le cas d'un 1 vs 1
-                case 1:
-                    int min = (point < 0)? point * (-1) : point;
-                    int max = min + 5;
-                    int i = min;
-                    int last = 0;
-                    for (i = min; i <= max; ++i)
+                int min = (point < 0)? point * (-1) : point;
+                int max = min + 5;
+                int i = min;
+                int last = 0;
+                for (i = min; i <= max; ++i)
+                {
+                    if (mains_joueurs.existe(num, i))
                     {
-                        if (mains_joueurs.existe(num, i))
-                        {
-                            if (!mains_joueurs.existe(0, i))
-                                return i;
-                            else
-                                last = i;
-                        }
+                        if (!mains_joueurs.existe(0, i))
+                            return i;
+                        else
+                            last = i;
                     }
-                    if (last != 0)
-                        return last;
-                    else
-                        return mains_joueurs.maxJoueur(num);
-                    break;
-
-                    // Dans le cas d'un 1 vs 2 ou 1 vs 4
-                case 2:
-                    Random rand = new Random();
-                    break;
-
-                    // Dans le cas d'un 1 vs 3
-                default :
-
-                    break;
+                }
+                if (last != 0)
+                    return last;
+                else
+                    return mains_joueurs.maxJoueur(num);
             }
-            return 0;
+            else // Dans le cas d'un 1 vs 2, 1 vs 3 ou 1 vs 4
+            {
+                /*
+                 * Dans le cas d'un affrontement contre plusieurs IA, nous allons procéder
+                 * à une stratégie de groupe.
+                 * L'IA numéro 1 sera chargée de récuperer les vautours afin d'obtenir le plus petit score
+                 * L'IA numéro 2 sera en charge de récuper les cartes les plus fortes
+                 * Si elles existent, les IA 3 et 4 essayeront de bloquer le joueur
+                 */
+                if(point < 0)
+                {
+                    // Si il s'agit de l'IA 1, je vais jouer ma carte la plus faible, les autres suivent la logique
+                    return mains_joueurs.minJoueur(num) + num;
+                }
+                else // Si il s'agit d'une souris
+                {
+                    if(num == 1) // Le joueur 1 est le dernier
+                        return mains_joueurs.maxJoueur(num) - nbJoueur + 2;
+                    else // Le joueur 2 jouera la meilleur carte
+                        return mains_joueurs.maxJoueur(num) - num + 2;
+                }
+            }
         }
     }
 }
